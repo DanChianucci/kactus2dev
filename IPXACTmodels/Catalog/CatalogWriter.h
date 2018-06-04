@@ -36,7 +36,7 @@ public:
 	CatalogWriter();
 
 	//! The destructor.
-	virtual ~CatalogWriter() = default;
+    virtual ~CatalogWriter();
     
     // Disable copying.
     CatalogWriter(CatalogWriter const& rhs) = delete;

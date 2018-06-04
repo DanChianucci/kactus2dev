@@ -24,7 +24,10 @@ AbstractionDefinitionWriter::AbstractionDefinitionWriter(): DocumentWriter()
 {
 
 }
+AbstractionDefinitionWriter::~AbstractionDefinitionWriter()
+{
 
+}
 //-----------------------------------------------------------------------------
 // Function: AbstractionDefinitionWriter::writeAbstractionDefinition()
 //-----------------------------------------------------------------------------

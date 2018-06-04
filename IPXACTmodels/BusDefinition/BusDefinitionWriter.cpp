@@ -21,6 +21,10 @@ BusDefinitionWriter::BusDefinitionWriter(): DocumentWriter()
 
 }
 
+BusDefinitionWriter::~BusDefinitionWriter()
+{
+
+}
 //-----------------------------------------------------------------------------
 // Function: BusDefinitionWriter::writeBusDefinition()
 //-----------------------------------------------------------------------------

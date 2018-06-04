@@ -38,7 +38,7 @@ public:
     BusDefinitionWriter& operator=(BusDefinitionWriter const& rhs) = delete;
 
 	//! The destructor.
-	virtual ~BusDefinitionWriter() = default;
+    virtual ~BusDefinitionWriter();
 
     /*!
      *  Writes the given bus definition into xml.

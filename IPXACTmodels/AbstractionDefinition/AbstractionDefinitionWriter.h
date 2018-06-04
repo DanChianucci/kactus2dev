@@ -40,7 +40,7 @@ public:
     AbstractionDefinitionWriter& operator=(AbstractionDefinitionWriter const& rhs) = delete;
 
 	//! The destructor.
-	virtual ~AbstractionDefinitionWriter() = default;
+    virtual ~AbstractionDefinitionWriter();
     
     /*!
      *  Writes the given abstraction definition into XML.

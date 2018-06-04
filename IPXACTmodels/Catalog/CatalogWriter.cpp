@@ -21,7 +21,10 @@ CatalogWriter::CatalogWriter(): DocumentWriter()
 {
 
 }
+CatalogWriter::~CatalogWriter()
+{
 
+}
 //-----------------------------------------------------------------------------
 // Function: CatalogWriter::writeCatalog()
 //-----------------------------------------------------------------------------
