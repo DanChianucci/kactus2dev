@@ -252,7 +252,6 @@ HEADERS += ./utilities/XmlUtils.h \
     ./Catalog/CatalogReader.h \
     ./Catalog/CatalogWriter.h \
     ./Catalog/validators/CatalogValidator.h \
-    ./Component/validators/AbstractionTypeValidator.h
 
 
 SOURCES += ./generaldeclarations.cpp \
@@ -502,5 +501,3 @@ SOURCES += ./generaldeclarations.cpp \
     ./Catalog/CatalogWriter.cpp \
     ./Catalog/IpxactFile.cpp \
     ./Catalog/validators/CatalogValidator.cpp \
-    ./Component/validators/AbstractionTypeValidator.cpp
-
