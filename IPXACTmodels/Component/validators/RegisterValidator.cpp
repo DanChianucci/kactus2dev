@@ -117,7 +117,9 @@ bool RegisterValidator::hasValidFields(QSharedPointer<RegisterDefinition> select
                 return false;
             }
 
-            reservedArea.addArea(field->name(), rangeBegin, rangeEnd);
+            if(field->getIsPresent().isEmpty() || expressionParser_->parseExpression(field->getIsPresent()).toInt()){
+              reservedArea.addArea(field->name(), rangeBegin, rangeEnd);
+            }
 
             if (!field->getTypeIdentifier().isEmpty() && fieldTypeIdentifiers.contains(field->getTypeIdentifier()))
             {
@@ -181,7 +183,7 @@ bool RegisterValidator::hasValidAlternateGroups(QSharedPointer<AlternateRegister
 {
     QRegularExpression whiteSpaceExpression;
     whiteSpaceExpression.setPattern(QStringLiteral("^\\s*$"));
-        
+
     QStringList alternateGroups;
     bool alternateGroupsOk = false;
     foreach (QString group, *selectedRegister->getAlternateGroups())
@@ -236,7 +238,7 @@ bool RegisterValidator::fieldsHaveSimilarDefinitionGroups(QSharedPointer<Field> 
     {
         foreach (QSharedPointer<EnumeratedValue> comparedEnumeratedValue, *comparedField->getEnumeratedValues())
         {
-            if (enumeratedValue->name() == comparedEnumeratedValue->name() && 
+            if (enumeratedValue->name() == comparedEnumeratedValue->name() &&
                 enumeratedValue->displayName() == comparedEnumeratedValue->displayName() &&
                 enumeratedValue->description() == comparedEnumeratedValue->description() &&
                 enumeratedValue->getValue() == comparedEnumeratedValue->getValue() &&
@@ -348,7 +350,9 @@ void RegisterValidator::findErrorsInFields(QVector<QString>& errors,
                     arg(selectedRegister->name()));
             }
 
-            reservedArea.addArea(field->name(), rangeBegin, rangeEnd);
+            if(field->getIsPresent().isEmpty() || expressionParser_->parseExpression(field->getIsPresent()).toInt()){
+              reservedArea.addArea(field->name(), rangeBegin, rangeEnd);
+            }
 
             if (!field->getTypeIdentifier().isEmpty() && fieldTypeIdentifiers.contains(field->getTypeIdentifier()))
             {
